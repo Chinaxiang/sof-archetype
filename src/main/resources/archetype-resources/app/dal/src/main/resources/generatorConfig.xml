@@ -1,0 +1,42 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<properties resource="init.properties"/>
+
+	<classPathEntry location="${symbol_dollar}{mysql.driver.location}" />
+
+	<context id="context1" defaultModelType="flat">
+
+		<property name="autoDelimitKeywords" value="true" />
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+		<property name="javaFileEncoding" value="UTF-8" />
+
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" /><!-- 取消注释 -->
+		</commentGenerator>
+		
+		<jdbcConnection 
+			connectionURL="${symbol_dollar}{jdbc.url}"
+			driverClass="${symbol_dollar}{jdbc.driverClass}" 
+			userId="${symbol_dollar}{jdbc.username}" 
+			password="${symbol_dollar}{jdbc.password}" />
+
+		<javaModelGenerator targetPackage="${symbol_dollar}{project.package}.dal.entity"
+			targetProject="${symbol_dollar}{project.location}/app/dal/src/main/java" />
+			
+		<sqlMapGenerator targetPackage="."
+			targetProject="${symbol_dollar}{project.location}/app/dal/src/main/resources/mybatis" />
+			
+		<javaClientGenerator targetPackage="${symbol_dollar}{project.package}.dal.dao"
+			targetProject="${symbol_dollar}{project.location}/app/dal/src/main/java" type="XMLMAPPER" />
+			
+		<table schema="" tableName="t_demo" domainObjectName="Demo">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" type="post"/>
+		</table>
+	</context>
+</generatorConfiguration>

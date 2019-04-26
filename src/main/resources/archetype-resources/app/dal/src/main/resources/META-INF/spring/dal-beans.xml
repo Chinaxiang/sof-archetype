@@ -1,0 +1,47 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd" 
+	default-autowire="byName">
+	
+	<context:annotation-config />
+	<context:component-scan base-package="${package}.dal" />
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<property name="driverClassName" value="${symbol_dollar}{datasource.driverClassName}"/>
+		<property name="url" value="${symbol_dollar}{datasource.url}" />
+		<property name="username" value="${symbol_dollar}{datasource.username}" />
+		<property name="password" value="${symbol_dollar}{datasource.password}" />
+		<property name="initialSize" value="${symbol_dollar}{datasource.initialSize}" />
+		<property name="minIdle" value="${symbol_dollar}{datasource.minIdle}" />
+		<property name="maxActive" value="${symbol_dollar}{datasource.maxActive}" />
+		<property name="maxWait" value="${symbol_dollar}{datasource.maxWait}" />
+		<property name="timeBetweenEvictionRunsMillis" value="${symbol_dollar}{datasource.timeBetweenEvictionRunsMillis}" />
+		<property name="minEvictableIdleTimeMillis" value="${symbol_dollar}{datasource.minEvictableIdleTimeMillis}" />
+		<property name="validationQuery" value="${symbol_dollar}{datasource.validationQuery}" />
+		<property name="testWhileIdle" value="${symbol_dollar}{datasource.testWhileIdle}" />
+		<property name="testOnBorrow" value="${symbol_dollar}{datasource.testOnBorrow}" />
+		<property name="testOnReturn" value="${symbol_dollar}{datasource.testOnReturn}" />
+		<property name="poolPreparedStatements" value="${symbol_dollar}{datasource.poolPreparedStatements}" />
+		<property name="maxOpenPreparedStatements" value="${symbol_dollar}{datasource.maxOpenPreparedStatements}" />
+		<property name="filters" value="${symbol_dollar}{datasource.filters}" />
+		<property name="connectProperties" value="${symbol_dollar}{datasource.connectProperties}" />
+	</bean>
+	
+</beans>

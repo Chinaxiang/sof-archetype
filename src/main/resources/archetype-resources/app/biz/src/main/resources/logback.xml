@@ -1,0 +1,9 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<contextName>${artifactId}</contextName>
+	<!-- 控制日志向上输出 -->
+	<logger name="${package}.biz" />
+</configuration>

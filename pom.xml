@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.quanshi</groupId>
+  <artifactId>sof-archetype</artifactId>
+  <version>1.0.0</version>
+  <packaging>maven-archetype</packaging>
+
+  <name>sof-archetype</name>
+
+  <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>3.0.1</version>
+      </extension>
+    </extensions>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-archetype-plugin</artifactId>
+          <version>3.0.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+  <description>Quanshi SOF Archetype</description>
+
+  <url>http://www.quanshi.com</url>
+
+  <developers>
+    <developer>
+      <id>1</id>
+      <name>huangyanxiang</name>
+      <email>yanxiang.huang@quanshi.com</email>
+      <url>http://www.huangyanxiang.com</url>
+    </developer>
+  </developers>
+  
+  <!-- 发布地址，请替换为你自己的私服或者去掉 -->
+  <distributionManagement>
+	  <repository>
+	    <id>gnet-central</id>
+	    <url>http://192.168.17.61:9001/nexus/content/repositories/gnet-central</url>
+	  </repository>
+  </distributionManagement>
+</project>

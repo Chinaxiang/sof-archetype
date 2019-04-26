@@ -1,0 +1,22 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<property name="log.max.size" value="100MB" />
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread] [%-5level] [%logger{36}] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root>
+		<appender-ref ref="console" level="DEBUG"/>
+	</root>
+	
+	<!-- spring -->
+	<!-- <logger name="org.springframework" level="INFO" /> -->
+
+</configuration>

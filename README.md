@@ -6,11 +6,11 @@
 
 模板生成应用架构组成
 
-![](http://qcdn.xinlijinrong.com/blog/screenshot_20170727154338.png/blog)
+![](http://qcdn.37ads.com/blog/screenshot_20170727154338.png/blog)
 
 生成代码结构
 
-![](http://qcdn.xinlijinrong.com/blog/screenshot_20170727154714.png/blog)
+![](http://qcdn.37ads.com/blog/screenshot_20170727154714.png/blog)
 
 模块是可以自己配置的。
 
